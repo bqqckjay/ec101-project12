@@ -1,0 +1,27 @@
+cription homework 3-2-2
+ #Write by EC101 - No.13
+  #Date:2020/06/10
+   #Version:1.0.0
+    
+     declare -a arrayNumber
+      vr="0"
+       i="0"
+        vreplace=0
+         while [ $vr -le 29 ]
+            do
+                   let vNumber=$RANDOM*250/32767+250
+                        for (( y=0 ; y < $vr ; y++ ))
+                               do
+                                          [ $vNumber -eq ${arrayNumber[$y]} ] && vreplace=1 &&  break
+                                               done
+                                                    [ $vreplace -eq 1 ] && vreplace=0 && continue
+                                                         arrayNumber[$vr]=$vNumber
+                                                              let vr=$vr+1
+                                                               done
+                                                                for (( x=0 ; x<30 ; x=x+1 ))
+                                                                   do
+                                                                          echo -ne "${arrayNumber[$x]}\t"
+                                                                               let varNew=$x%10
+                                                                                    [ $varNew == "9" ] && echo ""
+                                                                                     done
+                                                                                      exit 0
